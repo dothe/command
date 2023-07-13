@@ -1,5 +1,35 @@
+
 # start ros master
 roscore
 
 # run turtlesim demo
 rosrun turtlesim turtlesim_node
+
+# show ros env bianliang
+env | grep ROS
+
+# create workspace of ros
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace
+
+#workspace complile
+cd ~/catkin_ws
+catkin_make
+
+# cd to package folder
+roscd turtlesim
+
+# show path of package
+rospcak find turtlesim
+
+# show name and path of all packages in pc
+rospcak list
+ ## Or
+rospack list | less   # type q to quit
+
+# show name of all packages in pc
+rospack list-names
+
+# clear all text in concle
+clear
