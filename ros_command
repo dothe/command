@@ -1,0 +1,5 @@
+# start ros master
+roscore
+
+# run turtlesim demo
+rosrun turtlesim turtlesim_node
