@@ -21,10 +21,10 @@ catkin_make
 roscd turtlesim
 
 # show path of package
-rospcak find turtlesim
+rospack find turtlesim
 
 # show name and path of all packages in pc
-rospcak list
+rospack list
  ## Or
 rospack list | less   # type q to quit
 
@@ -33,3 +33,45 @@ rospack list-names
 
 # clear all text in concle
 clear
+
+# edit the package.xml
+nano package.xml    gedit package.xml
+
+# show msg format
+rosmsg show std_msgs/Header
+
+# show all msg
+rosmsg list
+
+# show msg in the package
+rosmsg package turtlesim
+
+# show packages which use msg
+rosmsg packages Pose
+
+# show ros graph
+rqt_graph
+
+# show node information
+rosnode info turtlesim
+
+# kill one node
+rosnode kill turtlesim
+
+# show node which are running
+rosnode list
+
+# ping node
+rosnode ping turtlesim
+
+# todo
+rostopic ....
+
+
+
+
+
+
+
+
+
