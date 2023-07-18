@@ -2,7 +2,7 @@
 # start ros master
 roscore
 
-# run turtlesim demo
+# run a node of turtlesim demo
 rosrun turtlesim turtlesim_node
 
 # show ros env bianliang
@@ -45,9 +45,25 @@ rosmsg list
 
 # show msg in the package
 rosmsg package turtlesim
+eg.
+ko@ubuntu-20:/opt/ros/noetic/share/turtlesim$ rosmsg package turtlesim
+turtlesim/Color
+turtlesim/Pose
+
 
 # show packages which use msg
 rosmsg packages Pose
+eg.
+ko@ubuntu-20:/opt/ros/noetic/share/turtlesim$ rosmsg packages Pose
+actionlib
+actionlib_msgs
+actionlib_tutorials
+bond
+control_msgs
+controller_manager_msgs
+diagnostic_msgs
+dynamic_reconfigure
+...
 
 # show ros graph
 rqt_graph
@@ -64,8 +80,38 @@ rosnode list
 # ping node
 rosnode ping turtlesim
 
-# todo
-rostopic ....
+# show the output /turtle1/cmd_vel topic from now
+rostopic echo /turtle1/cmd_vel
+
+# show data strute of topic
+rostopic type /turtle1/cmd_vel
+
+# publish a topic by terimerl
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0,0.0,0.0]' '[0.0,0.0,1.8]'
+
+# publish a topic by terimerl in 1Hz
+rostopic pub -r 1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0,0.0,0.0]' '[0.0,0.0,1.8]'
+
+# show topics list
+rostopic list
+
+# show ros services list
+rosservice list
+
+# show data structe of .. service
+rosservice type /spawn | rossrv show
+
+# call service by terimal
+rosservice call /spawn 2 32 1 ""
+
+# show parameter list
+rosparam list
+
+# show value of parameter
+rosparam get /background_b
+
+# set value of parameter
+rosparam set /background_b 200
 
 
 
