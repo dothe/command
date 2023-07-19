@@ -113,6 +113,12 @@ rosparam get /background_b
 # set value of parameter
 rosparam set /background_b 200
 
+# create a package
+cd ~/workspace/src
+catkin_create_pkg ros_start rospy roscpp std_msgs
+
+
+
 
 
 
